@@ -12,6 +12,7 @@
 		<meta name="resize" value="disabled"/>
 		<meta name="script" value="res/js/main.js"/>
 		<meta name="style" value="res/css/main.less"/>
+		<meta name="appIcon" value="res/svg/icon.svg"/>
 		<meta name="content" value="res/partials/content.htm"/>
 		<meta name="help" value="res/help/index.md"/>
 
