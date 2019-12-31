@@ -197,8 +197,7 @@ content {
 		line-height: 68px;
 		font-size:  37px;
 		color: @base-color;
-		.transition(@transition-speed);
-		transition-property: transform;
+		transition: transform @transition-speed;
 
 		.tile-inner {
 			width: @tile-size;
@@ -298,23 +297,23 @@ content {
 	}
 
 	.tile-new .tile-inner {
-		.animation(appear @transition-speed ease);
+		animation: appear @transition-speed ease;
 		animation-fill-mode: backwards;
 	}
 	.tile-merged .tile-inner {
 		z-index: 20;
-		.animation(pop @transition-speed ease);
+		animation: pop @transition-speed ease;
 		animation-fill-mode: backwards;
 	}
 }
 
-.keyframes(appear; {
-	0%   { opacity: 0; .transform( scale(0) ); }
-	100% { opacity: 1; .transform( scale(1) ); }
-});
+@keyframes appear {
+	0%   { opacity: 0; transform: scale(0); }
+	100% { opacity: 1; transform: scale(1); }
+}
 
-.keyframes(pop; {
-	0%   { .transform( scale(0) ); }
-	50%  { .transform( scale(1.2) ); }
-	100% { .transform( scale(1) ); }
-});
+@keyframes pop {
+	0%   { transform: scale(0); }
+	50%  { transform: scale(1.2); }
+	100% { transform: scale(1); }
+}
