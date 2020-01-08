@@ -1,6 +1,6 @@
 
 <h1>
-	<img src="/res/icons/app-icon-g2048" style="float: left; width: 42px; margin: 3px 5px 0 0;">
+	<img src="~/icon.svg" style="float: left; width: 42px; margin: 3px 5px 0 0;">
 	2048
 </h1>
 

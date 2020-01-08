@@ -23,6 +23,9 @@ const g2048 = {
 			case "keep-playing":
 				this.gameManager.doKeepPlaying();
 				break;
+			case "open-help":
+				defiant.shell("fs -u '~/help/index.md'");
+				break;
 		}
 	}
 };

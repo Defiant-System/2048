@@ -11,7 +11,7 @@
 		<Menu name="Quit 2048" shell="win -c"/>
 	</Menu>
 	<Menu name="Help">
-		<Menu name="How To Play" shell="win -h"/>
+		<Menu name="How To Play" click="open-help"/>
 		<Menu type="divider"/>
 		<Menu name="Source Code"/>
 	</Menu>
