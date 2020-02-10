@@ -9,7 +9,7 @@ const g2048 = {
 	},
 	dispatch(event) {
 		switch (event.type) {
-			case "keystroke":
+			case "window.keystroke":
 				switch (event.char) {
 					case "up":    this.gameManager.move(0); break;
 					case "down":  this.gameManager.move(2); break;
