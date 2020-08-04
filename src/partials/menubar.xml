@@ -1,6 +1,6 @@
 <MenuBar>
 	<Menu name="2048">
-		<Menu name="About 2048"/>
+		<Menu name="About 2048" shell="win -a"/>
 		<Menu type="divider"/>
 		<Menu name="New Game" click="restart"/>
 		<Menu type="divider"/>
