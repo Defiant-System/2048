@@ -4,10 +4,6 @@
 		<Menu type="divider"/>
 		<Menu name="New Game" click="restart"/>
 		<Menu type="divider"/>
-		<Menu name="Hide 2048"/>
-		<Menu name="Hide Others"/>
-		<Menu name="Show All" disabled="1"/>
-		<Menu type="divider"/>
 		<Menu name="Quit 2048" shell="win -c"/>
 	</Menu>
 	<Menu name="Help">
