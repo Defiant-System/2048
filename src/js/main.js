@@ -13,6 +13,7 @@ const g2048 = {
 		let state;
 		switch (event.type) {
 			case "window.close":
+				// save settings before close
 				state = this.gameManager.serialize();
 				window.settings.set("pgn", state);
 				//window.settings.clear();
