@@ -3,7 +3,7 @@ export class LocalStorageManager {
 	constructor() {
 		this.bestScoreKey = "bestScore";
 		this.gameStateKey = "gameState";
-		this.storage = window.storage;
+		this.storage = window.settings;
 	}
 	getBestScore() {
 		return this.storage.getItem(this.bestScoreKey) || 0;
@@ -12,11 +12,11 @@ export class LocalStorageManager {
 		this.storage.setItem(this.bestScoreKey, score);
 	}
 	getGameState() {
-		var stateJSON = this.storage.getItem(this.gameStateKey);
-		//return stateJSON ? JSON.parse(stateJSON) : null;
+		let gameState = this.storage.getItem(this.gameStateKey);
+		return gameState || null;
 	}
 	setGameState(gameState) {
-		//this.storage.setItem(this.gameStateKey, JSON.stringify(gameState));
+		this.storage.setItem(this.gameStateKey, gameState);
 	}
 	clearGameState() {
 		this.storage.removeItem(this.gameStateKey);

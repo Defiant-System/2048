@@ -3,13 +3,13 @@ import { Grid } from "./grid";
 import { Tile } from "./tile";
 
 export class GameManager {
-	constructor(size, HTMLActuator, LocalStorageManager, state) {
+	constructor(size, HTMLActuator, LocalStorageManager) {
 		this.size = size;
 		this.startTiles = 2;
 		this.actuator = new HTMLActuator;
 		this.storageManager = new LocalStorageManager;
 
-		this.setup(state);
+		this.setup();
 	}
 	restart() {
 		this.storageManager.clearGameState();
@@ -23,8 +23,8 @@ export class GameManager {
 	isGameTerminated() {
 		return this.over || (this.won && !this.keepPlaying);
 	}
-	setup(state) {
-		var previousState = state || this.storageManager.getGameState();
+	setup() {
+		var previousState = this.storageManager.getGameState();
 
 		// Reload the game from a previous game if present
 		if (previousState) {
@@ -68,7 +68,7 @@ export class GameManager {
 		if (this.over) {
 			this.storageManager.clearGameState();
 		} else {
-			this.storageManager.setGameState(this.serialize());
+			// this.storageManager.setGameState(this.serialize());
 		}
 
 		this.actuator.actuate(this.grid, {

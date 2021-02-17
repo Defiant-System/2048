@@ -6,16 +6,15 @@ import { LocalStorageManager } from "./classes/storeManager";
 
 const g2048 = {
 	init() {
-		let state = window.settings.get("pgn");
-		this.gameManager = new GameManager(4, HTMLActuator, LocalStorageManager, state);
+		this.gameManager = new GameManager(4, HTMLActuator, LocalStorageManager);
 	},
 	dispatch(event) {
-		let state;
+		let gameState;
 		switch (event.type) {
 			case "window.close":
 				// save settings before close
-				state = this.gameManager.serialize();
-				window.settings.set("pgn", state);
+				gameState = this.gameManager.serialize();
+				this.gameManager.storageManager.setGameState(gameState);
 				//window.settings.clear();
 				break;
 			case "window.keystroke":
@@ -27,8 +26,8 @@ const g2048 = {
 				}
 				break;
 			case "output-pgn":
-				state = this.gameManager.serialize();
-				console.log( JSON.stringify(state) );
+				gameState = this.gameManager.serialize();
+				console.log( JSON.stringify(gameState) );
 				break;
 			case "restart":
 				this.gameManager.restart();
