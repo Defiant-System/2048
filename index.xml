@@ -2,7 +2,7 @@
 	<Head>
 		<meta name="id" value="2048"/>
 		<meta name="title" value="2048" version="1.3"/>
-		<meta name="author" value="Hakan Bilgin" namespace="ant"/>
+		<meta name="author" value="Gabriele Cirulli" namespace="ant" ported="Hakan Bilgin"/>
 		<meta name="license" value="AGPL-3.0-or-later"/>
 		<meta name="repository" value="https://github.com/Defiant-System/2048"/>
 		<meta name="width" value="350"/>
