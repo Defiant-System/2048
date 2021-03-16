@@ -3,6 +3,7 @@ import { Grid } from "./grid";
 import { Tile } from "./tile";
 
 export class GameManager {
+
 	constructor(size, HTMLActuator, LocalStorageManager) {
 		this.size = size;
 		this.startTiles = 2;
@@ -11,18 +12,22 @@ export class GameManager {
 
 		this.setup();
 	}
+	
 	restart() {
 		this.storageManager.clearGameState();
 		this.actuator.continueGame(); // Clear the game won/lost message
 		this.setup();
 	}
+
 	doKeepPlaying() {
 		this.keepPlaying = true;
 		this.actuator.continueGame(); // Clear the game won/lost message
 	}
+
 	isGameTerminated() {
 		return this.over || (this.won && !this.keepPlaying);
 	}
+
 	setup() {
 		var previousState = this.storageManager.getGameState();
 
@@ -47,11 +52,13 @@ export class GameManager {
 		// Update the actuator
 		this.actuate();
 	}
+
 	addStartTiles() {
 		for (var i = 0; i < this.startTiles; i++) {
 			this.addRandomTile();
 		}
 	}
+
 	addRandomTile() {
 		if (this.grid.cellsAvailable()) {
 			var value = Math.random() < 0.9 ? 2 : 4;
@@ -59,6 +66,7 @@ export class GameManager {
 			this.grid.insertTile(tile);
 		}
 	}
+
 	actuate() {
 		if (this.storageManager.getBestScore() < this.score) {
 			this.storageManager.setBestScore(this.score);
@@ -79,6 +87,7 @@ export class GameManager {
 			terminated: this.isGameTerminated()
 		});
 	}
+
 	serialize() {
 		return {
 			grid:        this.grid.serialize(),
@@ -88,6 +97,7 @@ export class GameManager {
 			keepPlaying: this.keepPlaying
 		};
 	}
+
 	prepareTiles() {
 		this.grid.eachCell(function (x, y, tile) {
 			if (tile) {
@@ -96,11 +106,13 @@ export class GameManager {
 			}
 		});
 	}
+
 	moveTile(tile, cell) {
 		this.grid.cells[tile.x][tile.y] = null;
 		this.grid.cells[cell.x][cell.y] = tile;
 		tile.updatePosition(cell);
 	}
+
 	move(direction) {
 		// 0: up, 1: right, 2: down, 3: left
 		var self = this;
@@ -163,6 +175,7 @@ export class GameManager {
 			this.actuate();
 		}
 	}
+
 	getVector(direction) {
 		// Vectors representing tile movement
 		var map = {
@@ -173,6 +186,7 @@ export class GameManager {
 		};
 		return map[direction];
 	}
+
 	buildTraversals(vector) {
 		var traversals = { x: [], y: [] };
 		for (var pos = 0; pos < this.size; pos++) {
@@ -185,6 +199,7 @@ export class GameManager {
 
 		return traversals;
 	}
+
 	findFarthestPosition(cell, vector) {
 		var previous;
 		// Progress towards the vector direction until an obstacle is found
@@ -198,9 +213,11 @@ export class GameManager {
 			next: cell // Used to check if a merge is required
 		};
 	}
+
 	movesAvailable() {
 		return this.grid.cellsAvailable() || this.tileMatchesAvailable();
 	}
+
 	tileMatchesAvailable() {
 		var self = this;
 		var tile;
@@ -223,7 +240,9 @@ export class GameManager {
 		}
 		return false;
 	}
+
 	positionsEqual(first, second) {
 		return first.x === second.x && first.y === second.y;
 	}
+
 }

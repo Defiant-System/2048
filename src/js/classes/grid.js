@@ -2,10 +2,12 @@
 import { Tile } from "./tile";
 
 export class Grid {
+
 	constructor(size, previousState) {
 		this.size = size;
 		this.cells = previousState ? this.fromState(previousState) : this.empty();
 	}
+
 	empty() {
 		var cells = [];
 		for (var x = 0; x < this.size; x++) {
@@ -16,6 +18,7 @@ export class Grid {
 		}
 		return cells;
 	}
+
 	fromState(state) {
 		var cells = [];
 		for (var x = 0; x < this.size; x++) {
@@ -27,12 +30,14 @@ export class Grid {
 		}
 		return cells;
 	}
+
 	randomAvailableCell() {
 		var cells = this.availableCells();
 		if (cells.length) {
 			return cells[Math.floor(Math.random() * cells.length)];
 		}
 	}
+
 	availableCells() {
 		var cells = [];
 		this.eachCell(function (x, y, tile) {
@@ -52,12 +57,15 @@ export class Grid {
 	cellsAvailable() {
 		return !!this.availableCells().length;
 	}
+	
 	cellAvailable(cell) {
 		return !this.cellOccupied(cell);
 	}
+
 	cellOccupied(cell) {
 		return !!this.cellContent(cell);
 	}
+
 	cellContent(cell) {
 		if (this.withinBounds(cell)) {
 			return this.cells[cell.x][cell.y];
@@ -65,15 +73,19 @@ export class Grid {
 			return null;
 		}
 	}
+
 	insertTile(tile) {
 		this.cells[tile.x][tile.y] = tile;
 	}
+
 	removeTile(tile) {
 		this.cells[tile.x][tile.y] = null;
 	}
+
 	withinBounds(position) {
 		return position.x >= 0 && position.x < this.size && position.y >= 0 && position.y < this.size;
 	}
+
 	serialize() {
 		var cellState = [];
 		for (var x = 0; x < this.size; x++) {
@@ -87,4 +99,5 @@ export class Grid {
 			cells: cellState
 		};
 	}
+
 }

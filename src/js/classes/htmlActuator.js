@@ -1,5 +1,6 @@
 
 export class HTMLActuator {
+
 	constructor() {
 		this.tileContainer    = window.find(".tile-container");
 		this.scoreContainer   = window.find(".score-container .value");
@@ -8,6 +9,7 @@ export class HTMLActuator {
 
 		this.score = 0;
 	}
+	
 	actuate(grid, metadata) {
 		var self = this;
 
@@ -34,12 +36,15 @@ export class HTMLActuator {
 			}
 		});
 	}
+
 	continueGame() {
 		this.clearMessage();
 	}
+
 	clearContainer(container) {
 		container.html("");
 	}
+
 	addTile(tile) {
 		var self       = this;
 		var wrapper   = document.createElement("div");
@@ -81,16 +86,20 @@ export class HTMLActuator {
 		// Put the tile on the board
 		this.tileContainer.append(wrapper);
 	}
+
 	applyClasses(element, classes) {
 		element.setAttribute("class", classes.join(" "));
 	}
+
 	normalizePosition(position) {
 		return { x: position.x + 1, y: position.y + 1 };
 	}
+
 	positionClass(position) {
 		position = this.normalizePosition(position);
 		return "tile-position-" + position.x + "-" + position.y;
 	}
+
 	updateScore(score) {
 		this.clearContainer(this.scoreContainer);
 
@@ -107,9 +116,11 @@ export class HTMLActuator {
 			//this.scoreContainer.append(addition);
 		}
 	}
+
 	updateBestScore(bestScore) {
 		this.bestContainer.text(bestScore);
 	}
+
 	message(won) {
 		var type    = won ? "game-won" : "game-over";
 		var message = won ? "You win!" : "Game over!";
@@ -117,8 +128,10 @@ export class HTMLActuator {
 		this.messageContainer.addClass(type);
 		this.messageContainer.find("p").text(message);
 	}
+
 	clearMessage() {
 		// IE only takes one value to remove at a time.
 		this.messageContainer.removeClass("game-won game-over");
 	}
+
 }
