@@ -1,6 +1,6 @@
 
-import { Grid } from "./grid";
-import { Tile } from "./tile";
+import { Grid } from "./grid";
+import { Tile } from "./tile";
 
 export class GameManager {
 

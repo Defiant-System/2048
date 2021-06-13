@@ -1,7 +1,7 @@
 
-import { GameManager } from "./classes/gameManager";
-import { HTMLActuator } from "./classes/htmlActuator";
-import { LocalStorageManager } from "./classes/storeManager";
+import { GameManager } from "./classes/gameManager";
+import { HTMLActuator } from "./classes/htmlActuator";
+import { LocalStorageManager } from "./classes/storeManager";
 
 
 const g2048 = {
