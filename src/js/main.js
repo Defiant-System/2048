@@ -36,7 +36,7 @@ const g2048 = {
 				this.gameManager.doKeepPlaying();
 				break;
 			case "open-help":
-				defiant.shell("fs -u '~/help/index.md'");
+				karaqu.shell("fs -u '~/help/index.md'");
 				break;
 		}
 	}
