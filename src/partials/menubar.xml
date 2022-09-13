@@ -3,6 +3,7 @@
 		<Menu name="About 2048" shell="win -a"/>
 		<Menu type="divider"/>
 		<Menu name="New Game" click="restart"/>
+		<Menu name="Quit Without Saving" click="quit-no-save"/>
 		<Menu type="divider"/>
 		<Menu name="Quit 2048" shell="win -c"/>
 	</Menu>
