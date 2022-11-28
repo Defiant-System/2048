@@ -74,7 +74,7 @@ export class GameManager {
 
 		// Clear the state when the game is over (game over only, not win)
 		if (this.over) {
-			this.storageManager.clearGameState();
+			// this.storageManager.clearGameState();
 		} else {
 			// this.storageManager.setGameState(this.serialize());
 		}
