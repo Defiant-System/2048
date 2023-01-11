@@ -3,7 +3,6 @@
 		<Menu name="About 2048" shell="win -a"/>
 		<Menu type="divider"/>
 		<Menu name="New Game" click="restart"/>
-		<Menu name="Quit Without Saving" click="quit-no-save"/>
 		<Menu type="divider"/>
 		<Menu name="Quit 2048" shell="win -c"/>
 	</Menu>
@@ -11,6 +10,7 @@
 		<Menu name="How To Play" click="open-help"/>
 		<Menu type="divider"/>
 		<Menu name="Output PGN" click="output-pgn"/>
+		<Menu name="Quit Without Saving" click="quit-no-save" hotkey="alt+shift+q" type="hidden"/>
 		<Menu type="divider"/>
 		<Menu name="Source Code"/>
 	</Menu>
