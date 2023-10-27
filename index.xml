@@ -1,7 +1,7 @@
 <Application>
 	<Head>
 		<meta name="id" value="2048"/>
-		<meta name="title" value="2048" version="1.59"/>
+		<meta name="title" value="2048" version="1.60"/>
 		<meta name="author" value="Gabriele Cirulli" namespace="ant" ported="Hakan Bilgin"/>
 		<meta name="license" value="AGPL-3.0-or-later"/>
 		<meta name="repository" value="https://github.com/Defiant-System/2048"/>
@@ -14,6 +14,7 @@
 		<meta name="resize" value="disabled"/>
 		<meta name="script" value="src/js/main.js"/>
 		<meta name="style" value="src/css/main.less"/>
+		<meta name="themes" value="src/css/themes.less"/>
 		<meta name="content" value="src/partials/content.htm"/>
 
 		@import "src/partials/menubar.xml"
