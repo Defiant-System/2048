@@ -16,8 +16,10 @@
 				.best-container {
 					position: relative;
 					background: rgba(#000,.1);
+					background-image: radial-gradient(ellipse at bottom center, #ffffff17, transparent);
 					color: rgba(#fff,.4);
 					box-shadow: 0px 5px 0px 0px rgba(#000,.2);
+					text-shadow: 0 1px 1px rgba(#000,.3);
 
 					&:after {
 						content: "";
@@ -48,11 +50,17 @@
 					background: linear-gradient(90deg, transparent, #f7f7f7, transparent);
 					mix-blend-mode: soft-light;
 				}
+
+				.tile-inner {
+					background-image: radial-gradient(ellipse at bottom center, #ffffff27, transparent);
+					text-shadow: 0 1px 1px rgba(#000,.075);
+				}
 			}
 		}
 
 		.grid-container {
-			background: rgba(#fff,.15);
+			background: rgba(#fff,.25);
+			mix-blend-mode: overlay;
 		}
 
 		.grid-cell {
@@ -63,8 +71,10 @@
 		.game-message {
 			.button {
 				position: relative;
+				background-image: radial-gradient(ellipse at bottom center, #ffffff22, transparent);
 				box-shadow: 0px 5px 0px 0px darken(@button, 7%),
 							0 5px 13px rgba(#000,.5);
+				text-shadow: 0 1px 1px rgba(#000,.3);
 
 				&:after {
 					content: "";

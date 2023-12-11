@@ -1,4 +1,53 @@
 
+[data-ui="glass-frosted"],
+[data-ui="glass-distorted"],
+[data-ui="royale-beige"] {
+	.win-body_.win-body-focused_ content {
+		.heading {
+			.scores-container {
+				.score-container,
+				.best-container {
+					position: relative;
+					background-image: radial-gradient(ellipse at bottom center, #ffffff37, transparent);
+
+					&:after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 3px;
+						right: 3px;
+						height: 1px;
+						background: linear-gradient(90deg, transparent, #f7f7f799, transparent);
+						mix-blend-mode: soft-light;
+					}
+				}
+			}
+		}
+
+		.tile-container {
+			filter: saturate(1.25) drop-shadow(0 0 3px rgba(#000,.2));
+
+			.tile {
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 5px;
+					left: 3px;
+					right: 3px;
+					height: 1px;
+					background: linear-gradient(90deg, transparent, #f7f7f7, transparent);
+					mix-blend-mode: soft-light;
+				}
+
+				.tile-inner {
+					background-image: radial-gradient(ellipse at bottom center, #ffffff27, transparent);
+					text-shadow: 0 1px 1px rgba(#000,.075);
+				}
+			}
+		}
+	}
+}
+
 [data-ui="royale-amber"] {
 	.win-body_ content {
 		.game-container {
@@ -14,9 +63,13 @@
 			}
 		}
 
+		.grid-container {
+			background: #bbada099;
+		}
+
 		.tile-container {
 			mix-blend-mode: hard-light;
-			filter: sepia(.25) drop-shadow(0 0 3px rgba(#210,.35));
+			filter: sepia(.25) drop-shadow(0 0 3px rgba(#210,.5));
 		}
 	}
 }
@@ -38,7 +91,7 @@
 
 		.tile-container {
 			mix-blend-mode: hard-light;
-			filter: saturate(.65) hue-rotate(260deg) drop-shadow(0 0 3px rgba(#012,.35));
+			filter: saturate(.65) hue-rotate(260deg) drop-shadow(0 0 3px rgba(#012,.5));
 		}
 	}
 }
@@ -93,8 +146,9 @@
 			color: #fef;
 		}
 
-		.scores-container span.value {
-			color: #ede;
+		.scores-container {
+			span.name { color: #fef; }
+			span.value { color: #ede; }
 		}
 
 		.game-container {
@@ -110,9 +164,19 @@
 			}
 		}
 
+		.grid-container {
+			mix-blend-mode: overlay;
+		}
+
 		.tile-container {
-			filter: hue-rotate(335deg) drop-shadow(0 0 3px rgba(#a2a,.5));
-;
+			mix-blend-mode: initial;
+			filter: hue-rotate(335deg) drop-shadow(0 0 3px rgba(#a2a,.6));
+			
+			.tile {
+				.tile-inner {
+					background-image: radial-gradient(ellipse at bottom center, #ffffff40, transparent);
+				}
+			}
 		}
 	}
 }

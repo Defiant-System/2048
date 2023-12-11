@@ -4,7 +4,7 @@
 		<Menu type="divider"/>
 		<Menu name="New Game" click="restart"/>
 		<Menu type="divider"/>
-		<Menu name="Quit 2048" shell="win -c"/>
+		<Menu name="Quit 2048" shell="win -c" hotkey="alt+q"/>
 	</Menu>
 	<Menu name="Help">
 		<Menu name="How To Play" click="open-help"/>
