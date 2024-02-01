@@ -19,7 +19,7 @@ const g2048 = {
 					this.gameManager.storageManager.setGameState(gameState);
 				}
 				break;
-			case "window.keystroke":
+			case "window.keydown":
 				switch (event.char) {
 					case "up":    this.gameManager.move(0); break;
 					case "down":  this.gameManager.move(2); break;
