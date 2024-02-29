@@ -45,6 +45,23 @@
 				}
 			}
 		}
+
+		.game-message {
+			.button {
+				position: relative;
+				
+				&:after {
+					content: "";
+					position: absolute;
+					bottom: 0;
+					left: 3px;
+					right: 3px;
+					height: 1px;
+					background: linear-gradient(90deg, transparent, #f7f7f799, transparent);
+					mix-blend-mode: soft-light;
+				}
+			}
+		}
 	}
 }
 
