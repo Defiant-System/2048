@@ -12,6 +12,6 @@
 		<Menu name="Output PGN" click="output-pgn"/>
 		<Menu name="Quit Without Saving" click="quit-no-save" hotkey="alt+shift+q" type="hidden"/>
 		<Menu type="divider"/>
-		<Menu name="Source Code"/>
+		<Menu name="License" shell="win -al"/>
 	</Menu>
 </MenuBar>
