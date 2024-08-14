@@ -12,6 +12,7 @@ const g2048 = {
 	dispatch(event) {
 		let gameState;
 		switch (event.type) {
+			// system events
 			case "window.close":
 				if (saveSettings) {
 					// save settings before close
@@ -27,6 +28,14 @@ const g2048 = {
 					case "right": this.gameManager.move(1); break;
 				}
 				break;
+			// swipe support
+			case "swipe.up":    this.gameManager.move(0); break;
+			case "swipe.down":  this.gameManager.move(2); break;
+			case "swipe.left":  this.gameManager.move(3); break;
+			case "swipe.right": this.gameManager.move(1); break;
+			// case "swipe.angle": console.log(event); break;
+			
+			// custom events
 			case "quit-no-save":
 				saveSettings = false;
 				window.close();
