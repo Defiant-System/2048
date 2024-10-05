@@ -11,6 +11,7 @@ const g2048 = {
 	},
 	dispatch(event) {
 		let gameState;
+		// console.log(event);
 		switch (event.type) {
 			// system events
 			case "window.close":
