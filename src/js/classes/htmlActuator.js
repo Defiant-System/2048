@@ -127,6 +127,9 @@ export class HTMLActuator {
 
 		this.messageContainer.addClass(type);
 		this.messageContainer.find("p").text(message);
+		
+		// hide karaqu gamepad/joystick
+		karaqu.joystick();
 	}
 
 	clearMessage() {
