@@ -9,7 +9,7 @@ const g2048 = {
 	init() {
 		this.gameManager = new GameManager(4, HTMLActuator, LocalStorageManager);
 		// show karaqu gamepad/joystick (at center bottom)
-		karaqu.joystick({ center: "stick" });
+		karaqu.joystick({ theme: "light", center: "buttons" });
 	},
 	dispatch(event) {
 		let Self = g2048,
@@ -37,20 +37,12 @@ const g2048 = {
 				// reset swipe
 				delete Self.stickSwipe;
 				break;
-			case "gamepad.stick":
-				// prevents multiple swipes
-				if (Self.stickSwipe) return;
-				Self.stickSwipe = true;
-
-				let isHori = Math.abs(event.value[0]) < Math.abs(event.value[1]),
-					min = .2;
-				if (!isHori) {
-					if (event.value[0] > min) Self.gameManager.move(1);
-					else if (event.value[0] < -min) Self.gameManager.move(3);
-				}
-				if (isHori) {
-					if (event.value[1] > min) Self.gameManager.move(2);
-					else if (event.value[1] < -min) Self.gameManager.move(0);
+			case "gamepad.down":
+				switch (event.button) {
+					case "b12": Self.gameManager.move(0); break;
+					case "b13": Self.gameManager.move(2); break;
+					case "b14": Self.gameManager.move(3); break;
+					case "b15": Self.gameManager.move(1); break;
 				}
 				break;
 			// swipe support
