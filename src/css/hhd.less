@@ -2,6 +2,11 @@
 @media ( min-width: 320px ) {
 	[data-mobile="true"] {
 		[data-id="2048"] {
+			.win-body_ {
+				background: #422252 radial-gradient(ellipse at top center,#895099 0,transparent 90%);
+				color: #fdf;
+			}
+
 			.win-body_ content {
 				padding: 13px 13px;
 				--grid-spacing: 8px;
@@ -9,11 +14,19 @@
 				--font-size: 35px;
 
 				.heading {
+					h1 {
+						color: #efdbff;
+						text-shadow: 0 3px 0 rgba(#000,.1);
+					}
+
 					.scores-container {
 						.score-container,
 						.best-container {
 							position: relative;
+							background: #2d012b3d;
+							color: #fce3ffd9;
 							background-image: radial-gradient(ellipse at bottom center, #ffffff37, transparent);
+							box-shadow: 0px 5px 0px 0px #37273e47;
 
 							&:after {
 								content: "";
@@ -29,8 +42,47 @@
 					}
 				}
 
+				.game-container {
+					.game-message {
+						&.game-over {
+							background: #57247259;
+
+							p {
+								color: #fff;
+								text-shadow: 0 0 5px #fff;
+							}
+						}
+
+						.button {
+							position: relative;
+							
+							&:after {
+								content: "";
+								position: absolute;
+								bottom: 0;
+								left: 3px;
+								right: 3px;
+								height: 1px;
+								background: linear-gradient(90deg, transparent, #f7f7f799, transparent);
+								mix-blend-mode: soft-light;
+							}
+						}
+					}
+				}
+
+				.grid-container {
+					background: rgba(#fff,.25);
+					mix-blend-mode: overlay;
+				}
+
+				.grid-cell {
+					background: rgba(#000,.15);
+					box-shadow: inset 0 5px 0 rgba(#000,.05);
+				}
+
 				.tile-container {
-					filter: saturate(1.25) drop-shadow(0 0 3px rgba(#000,.2));
+					mix-blend-mode: hard-light;
+					filter: sepia(.25) drop-shadow(0 0 3px rgba(#303,.5));
 
 					.tile {
 						&:after {
@@ -47,23 +99,6 @@
 						.tile-inner {
 							background-image: radial-gradient(ellipse at bottom center, #ffffff27, transparent);
 							text-shadow: 0 1px 1px rgba(#000,.075);
-						}
-					}
-				}
-
-				.game-message {
-					.button {
-						position: relative;
-						
-						&:after {
-							content: "";
-							position: absolute;
-							bottom: 0;
-							left: 3px;
-							right: 3px;
-							height: 1px;
-							background: linear-gradient(90deg, transparent, #f7f7f799, transparent);
-							mix-blend-mode: soft-light;
 						}
 					}
 				}
