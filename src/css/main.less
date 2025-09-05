@@ -241,11 +241,24 @@ content {
 		color: #776e65;
 		transition: transform 160ms;
 		--g: calc( var( --tile-size ) + var( --grid-spacing ) );
+		
+		&:after {
+			content: "";
+			position: absolute;
+			bottom: 5px;
+			left: 3px;
+			right: 3px;
+			height: 1px;
+			background: linear-gradient(90deg, transparent, #f7f7f7, transparent);
+			mix-blend-mode: soft-light;
+		}
 
 		.tile-inner {
 			width: var( --tile-size );
 			height: calc( var( --tile-size ) - 5px );
 			border-radius: 5px;
+			background-image: radial-gradient(ellipse at bottom center, #ffffff27, transparent);
+			text-shadow: 0 1px 1px rgba(#000,.075);
 		}
 
 		&.tile-position-1-1 { transform: translate(0px, 0px); }
